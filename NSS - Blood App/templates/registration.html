@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anil Neerukonda Institute of Technology & Sciences (NSS-UNIT)</title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        header {
+            background-color: rgba(244, 67, 54, 0.8);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+        }
+
+        label {
+            font-size: 1vw;
+            font-weight: bold;
+        }
+
+        #blood-group {
+            width: 16vw;
+        }
+
+        input {
+            width: 15vw;
+        }
+
+        section {
+            margin-top: 18vh;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.648);
+            padding: 20px;
+            border-radius: 15px;
+            height: 58%;
+            width: 30%;
+        }
+
+        button {
+            border-radius: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        select {
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        .Register {
+            margin-top: 2vh;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 3vw;
+        }
+
+        .First {
+            display: flex;
+            justify-content: center;
+            margin-top: -1.5vh;
+            background-image: url(static/blood.png);
+            background-size: cover;
+            width: 99%;
+            height: 95vh;
+            border: 8px solid black;
+            overflow: hidden;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Anil Neerukonda Institute of Technology & Sciences (NSS-UNIT)</h1>
+    </header>
+
+    <div class="First">
+        <section id="user-registration">
+            <h2>User Registration</h2>
+            <form id="registration-form" action="/registration" method="POST" onsubmit="return validateForm()">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
+
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required placeholder="Enter your email">
+
+                <label for="phoneno">Phone Number:</label>
+                <input type="tel" id="phoneNo" name="phoneno" required placeholder="Enter your phone number">
+
+                <label for="bloodgroup">Blood Group:</label>
+                <select id="bloodGroup" name="bloodgroup" required>
+                    <option value="">Select Blood Group</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required placeholder="Enter your location">
+
+                <button id="mainBtn" type="submit">Register</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>Contact us at: example@example.com</p>
+    </footer>
+
+    <script>
+        function validateForm() {
+            // Validate name
+            const name = document.getElementById('name').value;
+            if (name === "") {
+                alert("Name is required.");
+                return false;
+            }
+
+            // Validate email
+            const email = document.getElementById('email').value;
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email.");
+                return false;
+            }
+
+            // Validate phone number (basic check for 10 digits)
+            const phoneNo = document.getElementById('phoneNo').value;
+            const phoneRegex = /^\d{10}$/;
+            if (!phoneRegex.test(phoneNo)) {
+                alert("Please enter a valid 10-digit phone number.");
+                return false;
+            }
+
+            // Validate blood group
+            const bloodGroup = document.getElementById('bloodGroup').value;
+            if (bloodGroup === "") {
+                alert("Please select a blood group.");
+                return false;
+            }
+
+            // Validate location
+            const location = document.getElementById('location').value;
+            if (location === "") {
+                alert("Location is required.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>
