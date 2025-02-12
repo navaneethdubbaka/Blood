@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donors List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: rgba(244, 67, 54, 0.8);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .donor-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh; /* Ensure the table is vertically centered */
+            padding: 20px;
+        }
+
+        table {
+            width: 70%; /* Adjust the width to fit the page */
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Donors for Blood Group: {{ blood_group }}</h1>
+    </header>
+
+    <div class="donor-list">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if donors %}
+                    {% for donor in donors %}
+                    <tr>
+                        <td>{{ donor[0] }}</td>
+                        <td>{{ donor[1] }}</td>
+                        <td>{{ donor[2] }}</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="3">No donors found for this blood group.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>Contact us at: example@example.com</p>
+    </footer>
+</body>
+</html>

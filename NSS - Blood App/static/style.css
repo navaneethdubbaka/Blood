@@ -1,0 +1,95 @@
+*{
+    padding:0;
+    margin:0;
+    overflow-x: hidden;
+}
+header {
+    background-color: rgba(244, 67, 54, 0.8); /* Background color with transparency */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+  }
+label{
+    font-size: 2vw;
+}
+  #blood-group{
+    width:16vw;
+  }
+  input{
+    width:15vw;
+  }
+  section {
+    margin-top: 18vh;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.648);
+    padding: 20px;
+    border-radius: 15px;
+    /* Set height to fill the viewport height */
+    height: 40%;
+    width: 30%;
+    
+}
+button{
+  border-radius: 10px;
+}
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  label {
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="tel"],
+  select {
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  .Register{
+    margin-top: 2vh;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  h2 {
+    color: #333;
+    font-size: 3vw;
+  }
+.First{
+    display:flex;
+    /* align-items: center; */
+    justify-content: center;
+    margin-top:-1.5vh;
+    /* margin-left:-1.5vh; */
+    /* margin-right: -3vh; */
+    background-image: url("blood.png"); /* Specify the background image */
+    background-size: cover; /* Ensure the background image covers the container */
+    width: 99%; /* Set width to 100% to fill the screen */
+    height: 95vh;
+    border: 8px solid black;
+
+}
+footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Background color with transparency */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    /* margin-top: 5vw; */
+  }
